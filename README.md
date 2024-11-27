@@ -1,5 +1,6 @@
-# cervical-cancer-cls-api
+# Cervical cancer cell classification API
 
-export PYTHONPATH=$PYTHONPATH:/home/xeon-3/PycharmProjects/cc-classify-api
+This API uses the DenseNet121 model, trained on a private cervical cancer cell dataset. 
+After training, the model is deployed as an API using LitServe and other frameworks.
 
-### 1 2 3 ga
+...

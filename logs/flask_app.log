@@ -1,0 +1,87 @@
+2024-11-27 09:55:17.307 | ERROR    | __main__:<module>:137 - Server failed to start: 'Settings' object has no attribute 'FLASK_HOST'
+2024-11-27 09:59:07.865 | INFO     | __main__:<module>:127 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 09:59:14.684 | DEBUG    | __main__:index:104 - Received file: 61f6b14a12ad37b9dc961ab3.png
+2024-11-27 09:59:14.684 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 09:59:14.684 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="61f6b14a12ad37b9dc961ab3.png"', 'Content-Type': 'image/png'}
+2024-11-27 09:59:14.745 | INFO     | __main__:get_prediction:63 - Prediction received: {'predicted_class': 'HSIL', 'class_probabilities': {'ASC_H': 0.009547705762088299, 'ASC_US': 0.00016117215272970498, 'HSIL': 0.9901502132415771, 'LSIL': 0.00011842116509797052, 'SCC': 2.244721144961659e-05}, 'confidence_score': 0.9901502132415771}
+2024-11-27 09:59:19.672 | DEBUG    | __main__:index:104 - Received file: large.jpg
+2024-11-27 09:59:19.672 | DEBUG    | __main__:index:105 - File content type: image/jpeg
+2024-11-27 09:59:19.672 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="large.jpg"', 'Content-Type': 'image/jpeg'}
+2024-11-27 09:59:19.699 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Payload too large"}
+2024-11-27 09:59:19.699 | ERROR    | __main__:get_prediction:73 - API request failed: 413 Client Error: Request Entity Too Large for url: http://localhost:8000/api/v1/predict - Detail: Payload too large
+2024-11-27 09:59:34.963 | DEBUG    | __main__:index:104 - Received file: corrupted_image.png
+2024-11-27 09:59:34.963 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 09:59:34.963 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="corrupted_image.png"', 'Content-Type': 'image/png'}
+2024-11-27 09:59:34.967 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Invalid or corrupted image file"}
+2024-11-27 09:59:34.967 | ERROR    | __main__:get_prediction:73 - API request failed: 400 Client Error: Bad Request for url: http://localhost:8000/api/v1/predict - Detail: Invalid or corrupted image file
+2024-11-27 10:00:58.867 | INFO     | __main__:<module>:127 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 10:01:06.900 | DEBUG    | __main__:index:104 - Received file: corrupted_image.png
+2024-11-27 10:01:06.901 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:01:06.901 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="corrupted_image.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:01:06.905 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Invalid or corrupted image file"}
+2024-11-27 10:01:06.905 | ERROR    | __main__:get_prediction:73 - API request failed: 400 Client Error: Bad Request for url: http://localhost:8000/api/v1/predict - Detail: Invalid or corrupted image file
+2024-11-27 10:01:39.837 | INFO     | __main__:<module>:127 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 10:01:46.537 | DEBUG    | __main__:index:104 - Received file: large.jpg
+2024-11-27 10:01:46.537 | DEBUG    | __main__:index:105 - File content type: image/jpeg
+2024-11-27 10:01:46.537 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="large.jpg"', 'Content-Type': 'image/jpeg'}
+2024-11-27 10:01:46.559 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Payload too large"}
+2024-11-27 10:01:46.559 | ERROR    | __main__:get_prediction:73 - API request failed: 413 Client Error: Request Entity Too Large for url: http://localhost:8000/api/v1/predict - Detail: Payload too large
+2024-11-27 10:02:11.917 | DEBUG    | __main__:index:104 - Received file: corrupted_image.png
+2024-11-27 10:02:11.917 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:02:11.917 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="corrupted_image.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:02:11.920 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Invalid or corrupted image file"}
+2024-11-27 10:02:11.921 | ERROR    | __main__:get_prediction:73 - API request failed: 400 Client Error: Bad Request for url: http://localhost:8000/api/v1/predict - Detail: Invalid or corrupted image file
+2024-11-27 10:03:25.465 | INFO     | __main__:<module>:127 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 10:03:30.581 | DEBUG    | __main__:index:104 - Received file: corrupted_image.png
+2024-11-27 10:03:30.581 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:03:30.581 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="corrupted_image.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:03:30.586 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Invalid or corrupted image file"}
+2024-11-27 10:03:30.586 | ERROR    | __main__:get_prediction:73 - API request failed: 400 Client Error: Bad Request for url: http://localhost:8000/api/v1/predict - Detail: Invalid or corrupted image file
+2024-11-27 10:03:36.434 | DEBUG    | __main__:index:104 - Received file: large.jpg
+2024-11-27 10:03:36.435 | DEBUG    | __main__:index:105 - File content type: image/jpeg
+2024-11-27 10:03:36.435 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="large.jpg"', 'Content-Type': 'image/jpeg'}
+2024-11-27 10:03:36.458 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Payload too large"}
+2024-11-27 10:03:36.458 | ERROR    | __main__:get_prediction:73 - API request failed: 413 Client Error: Request Entity Too Large for url: http://localhost:8000/api/v1/predict - Detail: Payload too large
+2024-11-27 10:03:42.470 | DEBUG    | __main__:index:104 - Received file: 61f6b14a12ad37b9dc961ab3.png
+2024-11-27 10:03:42.470 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:03:42.470 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="61f6b14a12ad37b9dc961ab3.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:03:42.528 | INFO     | __main__:get_prediction:63 - Prediction received: {'predicted_class': 'HSIL', 'class_probabilities': {'ASC_H': 0.009547705762088299, 'ASC_US': 0.00016117215272970498, 'HSIL': 0.9901502132415771, 'LSIL': 0.00011842116509797052, 'SCC': 2.244721144961659e-05}, 'confidence_score': 0.9901502132415771}
+2024-11-27 10:05:18.749 | INFO     | __main__:<module>:127 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 10:05:33.760 | DEBUG    | __main__:index:104 - Received file: 6218749971c8f457882ac2e2.png
+2024-11-27 10:05:33.760 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:05:33.760 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="6218749971c8f457882ac2e2.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:05:33.819 | INFO     | __main__:get_prediction:63 - Prediction received: {'predicted_class': 'SCC', 'class_probabilities': {'ASC_H': 0.0397578701376915, 'ASC_US': 0.0005954225198365748, 'HSIL': 0.00797897856682539, 'LSIL': 0.0013260218547657132, 'SCC': 0.9503417611122131}, 'confidence_score': 0.9503417611122131}
+2024-11-27 10:05:41.709 | DEBUG    | __main__:index:104 - Received file: corrupted_image.png
+2024-11-27 10:05:41.709 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:05:41.709 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="corrupted_image.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:05:41.713 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Invalid or corrupted image file"}
+2024-11-27 10:05:41.713 | ERROR    | __main__:get_prediction:73 - API request failed: 400 Client Error: Bad Request for url: http://localhost:8000/api/v1/predict - Detail: Invalid or corrupted image file
+2024-11-27 10:05:45.109 | DEBUG    | __main__:index:104 - Received file: large.jpg
+2024-11-27 10:05:45.109 | DEBUG    | __main__:index:105 - File content type: image/jpeg
+2024-11-27 10:05:45.109 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="large.jpg"', 'Content-Type': 'image/jpeg'}
+2024-11-27 10:05:45.130 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Payload too large"}
+2024-11-27 10:05:45.131 | ERROR    | __main__:get_prediction:73 - API request failed: 413 Client Error: Request Entity Too Large for url: http://localhost:8000/api/v1/predict - Detail: Payload too large
+2024-11-27 10:06:14.334 | DEBUG    | __main__:index:104 - Received file: 6209100718c2a11311dc285f.png
+2024-11-27 10:06:14.334 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:06:14.334 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="6209100718c2a11311dc285f.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:06:14.399 | INFO     | __main__:get_prediction:63 - Prediction received: {'predicted_class': 'SCC', 'class_probabilities': {'ASC_H': 0.006422930862754583, 'ASC_US': 1.0813680091814604e-05, 'HSIL': 0.028370479121804237, 'LSIL': 1.1556629033293575e-05, 'SCC': 0.9651843309402466}, 'confidence_score': 0.9651843309402466}
+2024-11-27 10:08:23.620 | INFO     | __main__:<module>:127 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 10:14:34.216 | INFO     | __main__:<module>:154 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 10:14:38.288 | INFO     | __main__:after_request:144 - Response status code: 200
+2024-11-27 10:14:38.325 | INFO     | __main__:after_request:144 - Response status code: 304
+2024-11-27 10:14:38.326 | INFO     | __main__:after_request:144 - Response status code: 200
+2024-11-27 10:14:41.016 | INFO     | __main__:after_request:144 - Response status code: 404
+2024-11-27 10:15:31.407 | INFO     | __main__:<module>:127 - Starting Flask server on 0.0.0.0:5000
+2024-11-27 10:15:41.273 | DEBUG    | __main__:index:104 - Received file: 6209100718c2a11311dc285f.png
+2024-11-27 10:15:41.273 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:15:41.273 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="6209100718c2a11311dc285f.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:15:41.335 | INFO     | __main__:get_prediction:63 - Prediction received: {'predicted_class': 'SCC', 'class_probabilities': {'ASC_H': 0.006422930862754583, 'ASC_US': 1.0813680091814604e-05, 'HSIL': 0.028370479121804237, 'LSIL': 1.1556629033293575e-05, 'SCC': 0.9651843309402466}, 'confidence_score': 0.9651843309402466}
+2024-11-27 10:15:44.544 | DEBUG    | __main__:index:104 - Received file: corrupted_image.png
+2024-11-27 10:15:44.545 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:15:44.545 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="corrupted_image.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:15:44.548 | ERROR    | __main__:get_prediction:69 - API Response: {"detail":"Invalid or corrupted image file"}
+2024-11-27 10:15:44.548 | ERROR    | __main__:get_prediction:73 - API request failed: 400 Client Error: Bad Request for url: http://localhost:8000/api/v1/predict - Detail: Invalid or corrupted image file
+2024-11-27 10:15:52.179 | DEBUG    | __main__:index:104 - Received file: 61f01c5fcec542a39807a20c.png
+2024-11-27 10:15:52.179 | DEBUG    | __main__:index:105 - File content type: image/png
+2024-11-27 10:15:52.180 | DEBUG    | __main__:index:106 - File headers: {'Content-Disposition': 'form-data; name="image"; filename="61f01c5fcec542a39807a20c.png"', 'Content-Type': 'image/png'}
+2024-11-27 10:15:52.256 | INFO     | __main__:get_prediction:63 - Prediction received: {'predicted_class': 'HSIL', 'class_probabilities': {'ASC_H': 0.2892760634422302, 'ASC_US': 0.03179503604769707, 'HSIL': 0.5734752416610718, 'LSIL': 0.09995003789663315, 'SCC': 0.005503545980900526}, 'confidence_score': 0.5734752416610718}

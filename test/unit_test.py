@@ -6,7 +6,7 @@ import requests
 from typing import Dict, Any, Optional
 from requests.exceptions import RequestException
 
-from src.core.config import config
+from config.config import config
 
 
 class ImageClassificationAPITestBase(unittest.TestCase):
