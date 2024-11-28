@@ -2,31 +2,37 @@
 FROM ubuntu:latest
 LABEL authors="xeon-3"
 
-# Update and install Python3, pip3, python3-venv and necessary packages
-RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+# Set the desired Python version as an argument
+ARG PYTHON_VERSION=3.10
 
-# Copy files and folders into container
-COPY /src /cervical-cancer-cls-api
-COPY /test /cervical-cancer-cls-api
-COPY /config /cervical-cancer-cls-api
-COPY client.py /cervical-cancer-cls-api
-COPY requirements.txt /cervical-cancer-cls-api
-COPY /app /cervical-cancer-cls-api
+# Update and install necessary packages
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set PYTHONPATH environment variable
+ENV PYTHONPATH=$PYTHONPATH:/cervical-cancer-cls-api
 
 # Set working directory
 WORKDIR /cervical-cancer-cls-api
 
-# Create a virtual environment and activate it
-RUN python3 -m venv venv
+# Copy application files into the container
+COPY /src ./src
+COPY /test ./test
+COPY /config ./config
+COPY client.py .
+COPY requirements.txt .
+COPY /app ./app
 
-# Install dependencies
-RUN venv/bin/pip install --no-cache-dir -r requirements.txt
+# Install dependencies globally in the container
+RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
 
-# Creatte log folder
-RUN mkdir -p /cervical-cancer-cls-api/logs
+# Create a folder for logs
+RUN mkdir -p logs
 
 # Set working directory for the server
-WORKDIR /cervical-cancer-cls-api/src
+WORKDIR /cervical-cancer-cls-api/
 
-# Run server
-CMD ["python", "main.py"]
+# Specify the default command to run the server
+CMD ["python3", "src/main.py"]
