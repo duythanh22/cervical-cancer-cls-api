@@ -1,5 +1,5 @@
 # Use the latest Ubuntu image
-FROM ubuntu:latest
+FROM nvidia/cuda:12.6.1-cudnn-runtime-ubuntu24.04
 LABEL authors="xeon-3"
 
 # Set the desired Python version as an argument
