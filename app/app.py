@@ -66,7 +66,7 @@ class ImageClassifierClient:
         except requests.RequestException as e:
             try:
                 error_detail = response.json().get("detail", "Unknown error")
-                logger.error(f"API Response: {response.text}")  # Add log for debug
+                logger.error(f"API Response: {response.text}")
             except (ValueError, AttributeError, UnboundLocalError):
                 error_detail = "Failed to get prediction from API"
 
@@ -100,7 +100,6 @@ def index():
             logger.warning("No selected file")
             return jsonify({"error": "No selected file"})
 
-        # Thêm logging để debug
         logger.debug(f"Received file: {file.filename}")
         logger.debug(f"File content type: {file.content_type}")
         logger.debug(f"File headers: {dict(file.headers)}")

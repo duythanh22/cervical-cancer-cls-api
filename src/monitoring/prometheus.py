@@ -4,6 +4,31 @@ import torch.cuda as cuda
 from loguru import logger
 
 class PrometheusLogger(litserve.Logger):
+    """
+    A logger class that integrates with Prometheus to collect and expose metrics
+    related to API requests, model predictions, and system resource usage.
+
+    This class extends `litserve.Logger` and utilizes Prometheus metrics such as
+    `Histogram`, `Counter`, and `Gauge` to track various aspects of the system's
+    performance and usage.
+
+    Attributes:
+        registry (CollectorRegistry): The Prometheus registry to which metrics are registered.
+        function_duration (Histogram): Tracks the time spent processing requests for different functions.
+        api_requests (Counter): Counts the total number of API requests handled, categorized by endpoint, method, and status.
+        api_response_time (Histogram): Measures the response time of API endpoints.
+        model_predictions (Counter): Counts the total number of model predictions, categorized by predicted class and confidence level.
+        model_memory_usage (Gauge): Monitors the memory usage of the model, categorized by device type.
+        system_memory_usage (Gauge): Monitors the overall system memory usage, categorized by memory type.
+        cpu_usage (Gauge): Monitors the CPU usage by the process and system, categorized by CPU type.
+
+    Methods:
+        process(key, value):
+            Processes log entries and updates the corresponding Prometheus metrics based on the key and value provided.
+
+        _confidence_bucket(confidence):
+            A static method that categorizes confidence levels into buckets: 'low', 'medium', and 'high'.
+    """
     def __init__(self, registry: CollectorRegistry = None):
         super().__init__()
         self.registry = registry or CollectorRegistry()
@@ -51,6 +76,7 @@ class PrometheusLogger(litserve.Logger):
         )
 
     def process(self, key, value):
+        IGNORED_ENDPOINTS = {"/favicon.ico"}
         try:
             if key == "model_prediction":
                 predicted_class, confidence = value
@@ -72,6 +98,11 @@ class PrometheusLogger(litserve.Logger):
                 self.cpu_usage.labels(cpu_type="process").set(value["process"])
             elif key == "api_requests":
                 endpoint, method, status = value["endpoint"], value["method"], value["status"]
+
+                # Skip logging for ignored endpoints
+                if endpoint in IGNORED_ENDPOINTS:
+                    return
+
                 self.api_requests.labels(
                     endpoint=endpoint,
                     method=method,

@@ -1,10 +1,25 @@
+
+"""
+This script sets up and runs a server for the Cervical Cell Classifier API.
+
+Functions:
+- setup_prometheus: Configures Prometheus for multiprocess metrics collection.
+- setup_logging: Configures logging with Loguru to output to both stdout and a file.
+- cleanup_metric_files: Cleans up old Prometheus metric files from the multiprocess directory.
+- main: Initializes the server, sets up Prometheus and logging, and starts the server with
+  necessary middlewares and configurations.
+
+The server is configured to handle API requests for cervical cell classification and expose
+metrics for monitoring via Prometheus.
+"""
+
 import os
 import sys
 from loguru import logger
 import litserve as ls
 from prometheus_client import CollectorRegistry, make_asgi_app, multiprocess
 from litserve.middlewares import MaxSizeMiddleware
-from core.config import config
+from config.config import config
 from api.classifier_serve import CervicalCellClassifierAPI
 from src.monitoring.prometheus import PrometheusLogger
 from middleware.metrics import MetricsMiddleware
@@ -71,7 +86,6 @@ def main():
     except Exception as e:
         logger.error(f"Server failed to start: {e}")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
