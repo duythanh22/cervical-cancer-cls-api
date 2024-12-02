@@ -22,8 +22,8 @@ import requests
 from config.config import config
 
 # URL and headers from your configuration
-API_URL = config.API_URL
-
+# API_URL = config.API_URL
+API_URL = "https://8000-01jds4gkkdm99xkn3an40wbfk6.cloudspaces.litng.ai/v1/api/predict"
 
 def send_request(image_path):
     """Send the image file to the API and return the response."""
