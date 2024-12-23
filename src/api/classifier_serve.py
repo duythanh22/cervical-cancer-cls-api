@@ -16,23 +16,40 @@ import PIL.Image
 
 class CervicalCellClassifierAPI(ls.LitAPI):
     """
-    CervicalCellClassifierAPI is a LitServe-based service for classifying cervical cell images.
-
-    This class extends the LitAPI from the litserve library and provides methods for setting up
-    the model, decoding image requests, batching inputs, making predictions, unbatching outputs,
-    and encoding responses. It also includes an authorization mechanism using HTTPBearer security.
+    CervicalCellClassifierAPI is a subclass of LitAPI designed for processing cervical cell images and performing
+    classification predictions. It implements setup, decode_request, batch, predict, unbatch, and encode_response methods.
 
     Attributes:
-        security (HTTPBearer): Security scheme for API authentication.
+        security: An instance of HTTPBearer used for securing the API with token-based authentication.
 
     Methods:
-        setup(devices): Loads the model onto the specified device(s) and prepares it for inference.
-        decode_request(request, **kwargs): Validates and processes an uploaded image file into a tensor.
-        batch(inputs): Combines a list of tensors into a single batch tensor.
-        predict(x, **kwargs): Performs inference on the input tensor and logs system metrics.
-        unbatch(output): Separates the batched output into individual predictions.
-        encode_response(output, **kwargs): Formats the prediction results into a JSON-compatible response.
-        authorize(credentials): Validates the API token for request authorization.
+        setup(devices):
+            Configures the API by loading the machine learning model onto the appropriate device. Raises an exception
+            if the model loading process fails.
+
+        decode_request(request, **kwargs):
+            Processes an image file uploaded by the user, verifies its format and integrity, and converts it into a
+            normalized tensor suitable for model input. Raises exceptions for unsupported formats or corrupted files.
+
+        batch(inputs):
+            Combines multiple tensor inputs into a single tensor batch for processing.
+
+        predict(x, **kwargs):
+            Executes the model prediction on the input tensor and calculates class probabilities. Logs system
+            resource metrics and any issues encountered during prediction. Returns the predicted classes and their
+            associated probabilities.
+
+        unbatch(output):
+            Separates batched prediction outputs into individual predictions, returning a list of tuples with class
+            indices and probabilities.
+
+        encode_response(output, **kwargs):
+            Transforms the prediction results into a dictionary format suitable for API response, including
+            predicted class labels and confidence scores.
+
+        authorize(credentials):
+            Validates the provided authorization token against the expected API token. Raises an exception if the
+            token is invalid or missing.
     """
     security = HTTPBearer()
 
