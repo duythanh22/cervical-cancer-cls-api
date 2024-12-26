@@ -6,12 +6,15 @@ After training, the model is deployed as an API using LitServe and other framewo
 ## Installation and Usage
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/.../cervical-cancer-cls-api.git
+git clone https://github.com/duythanh22/cervical-cancer-cls-api.git
 ```
 
 ### Navigate to the project directory and set python path
 ```bash
 cd cervical-cancer-cls-api/
+```
+
+```bash
 export PYTHONPATH=$PYTHONPATH:/cervical-cancer-cls-api
 ```
 
